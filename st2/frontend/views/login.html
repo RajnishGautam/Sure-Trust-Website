@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sure Trust</title>
+  <link rel="stylesheet" href="../public/css/login.css">
+  <link rel="icon" type="image/png" href="../public/images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+     <!-- Header -->
+<header>
+    <div class="container">
+        <div class="logo-container">
+            <img src="../public/images/logo.png" alt="Sure Trust Logo" class="logo">
+            <div class="company-name">
+                <div>Sure Trust</div>
+                <div>Social Service Initiative</div>
+            </div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <a href="https://www.linkedin.com/company/sure-trust/" target="_blank" class="icon-link">
+                <i class="fab fa-linkedin social-icon"></i>
+            </a>
+            <a href="https://github.com/sure-trust" target="_blank" class="icon-link">
+                <i class="fab fa-github social-icon"></i>
+            </a>
+            <div class="dropdown">
+                <button class="menu-button"><i class="fas fa-bars"></i></button>
+                <div class="dropdown-content">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="iery.html">IERY</a>
+                    <a href="services.html">Services for Community</a>
+                    <a href="lifeskills.html">Lifeskills Training Program</a>
+                    <a href="webdev.html">Website Developers</a>
+                    <a href="photo-gallery.html">Photo Gallery</a>
+                    <a href="video-gallery.html">Video Gallery</a>
+                    <a href="documents.html">Documents</a>
+                    <a href="alumni.html">Alumni</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    
+ <div class="container1">
+        <h3>Login</h3>
+        <form id="login-form">
+           
+                <label for="email">Email address</label>
+                <div class="input-group">
+                  <span class="input-prefix">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <input type="email" id="email"  name="email" required>
+                </div>
+                <small class="error-message" id="email-error"></small>
+              
+                <label for="password">Password</label>
+                <div class="input-group">
+                  <span class="input-prefix">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                  <input type="password" id="password" name="password" required>
+                </div>
+                <small class="error-message" id="password-error"></small>
+              
+                <button type="submit">Login</button>
+                <small class="error-message" id="login-error"></small>
+        </form>
+
+        <div class="signup-container">
+            <p>Don't have an account?</p>
+            <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("login-form");
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const loginError = document.getElementById('login-error');
+
+                try {
+                    const response = await fetch('http://localhost:3000/auth/login', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        // Store the token in localStorage or sessionStorage
+                        localStorage.setItem('token', result.token);
+                        alert("Login successful!");
+                        window.location.href = "dashboard.html"; // Redirect to dashboard after successful login
+                    } else {
+                        // Show the error message
+                        loginError.textContent = result.message;
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                    loginError.textContent = "An error occurred during login.";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

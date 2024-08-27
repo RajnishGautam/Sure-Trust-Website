@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sure Trust</title>
+    <link rel="stylesheet" href="../public/css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="step-indicator">
+            <span id="current-step">1</span> of 5 steps
+        </div>
+        <form id="signup-form">
+            <!-- Step 1: Account Details -->
+            <div class="form-step active" id="step1">
+                <h1>Account Details</h1>
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" required>
+                <small class="error-message" id="email-error"></small>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+                <small class="error-message" id="password-error"></small>
+
+                <label for="confirm-password">Confirm password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <small class="error-message" id="confirm-password-error"></small>
+            </div>
+
+            <!-- Step 2: Personal Details -->
+            <div class="form-step" id="step2">
+                <h1>Personal Details</h1>
+                <label for="full-name">Full name</label>
+                <input type="text" id="full-name" name="fullName" required>
+                <small class="error-message" id="name-error"></small>
+
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" required pattern="^\d{10}$">
+                <small class="error-message" id="phone-error">Enter a valid 10-digit phone number.</small>
+
+                <label>Gender</label>
+                <div class="gender-container">
+                    <div class="gender-option">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="other" name="gender" value="other" required>
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+                <small class="error-message" id="gender-error"></small>
+
+                <label for="qualification">Qualification</label>
+                <input type="text" id="qualification" name="qualification" required>
+                <small class="error-message" id="qualification-error"></small>
+            </div>
+
+            <!-- Step 3: College Details -->
+            <div class="form-step" id="step3">
+                <h1>College Details</h1>
+                <p>Only for Students</p>
+                <label for="college-name">College Name</label>
+                <input type="text" id="college-name" name="collegeName">
+                <label for="college-place">College Place</label>
+                <input type="text" id="college-place" name="collegePlace">
+                <label for="college-district">College District</label>
+                <input type="text" id="college-district" name="collegeDistrict">
+                <label for="college-state">College State</label>
+                <input type="text" id="college-state" name="collegeState">
+            </div>
+
+            <!-- Step 4: Select Course -->
+            <div class="form-step" id="step4">
+                <h1>Select Course</h1>
+                <label for="course">Select course</label>
+                <select id="course" name="course" required>
+                    <option value="">Select course</option>
+                    <!-- Options to be dynamically loaded from backend -->
+                </select>
+                <small class="error-message" id="course-error"></small>
+            </div>
+
+            <!-- Step 5: Terms & Conditions -->
+            <div class="form-step" id="step5">
+                <h1>Terms & Conditions</h1>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="term1" name="term1" required>
+                    <label for="term1">Student has to turn on video during the entire class</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="term2" name="term2" required>
+                    <label for="term2">Attending 8 Life Skills Training sessions during the four months course is mandatory for all the students.</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="term3" name="term3" required>
+                    <label for="term3">Student should not be a full-time or part-time employee anywhere.</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="term4" name="term4" required>
+                    <label for="term4">Students promise that you will learn the course with commitment, regularity, and punctuality, for full four months duration, abiding by all the rules and discipline of the SURE TRUST.</label>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="btn-container">
+                <button type="button" id="prev-btn">Prev</button>
+                <button type="button" id="next-btn">Next</button>
+                <button type="submit" id="submit-btn" style="display: none;">Create Account</button>
+            </div>
+        </form>
+        <div class="login-container">
+            <p>Already have an account?</p>
+            <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("signup-form");
+            const steps = Array.from(document.getElementsByClassName("form-step"));
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+            const submitBtn = document.getElementById("submit-btn");
+            let currentStep = 0;
+
+            function showStep(stepIndex) {
+                steps.forEach((step, index) => {
+                    step.classList.toggle("active", index === stepIndex);
+                });
+                document.getElementById("current-step").innerText = stepIndex + 1;
+
+                prevBtn.style.display = stepIndex === 0 ? "none" : "inline-block";
+                nextBtn.style.display = stepIndex === steps.length - 1 ? "none" : "inline-block";
+                submitBtn.style.display = stepIndex === steps.length - 1 ? "inline-block" : "none";
+            }
+
+            function validateStep(stepIndex) {
+                const inputs = steps[stepIndex].querySelectorAll("input, select");
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    const errorElement = input.nextElementSibling;
+                    if (!input.checkValidity()) {
+                        if (errorElement) {
+                            errorElement.textContent = input.validationMessage;
+                        }
+                        isValid = false;
+                    } else {
+                        if (errorElement) {
+                            errorElement.textContent = "";
+                        }
+                    }
+                });
+
+                // Password matching validation (only if we are on the first step)
+                if (stepIndex === 0) {
+                    const password = document.getElementById('password').value;
+                    const confirmPassword = document.getElementById('confirm-password').value;
+                    const confirmPasswordError = document.getElementById('confirm-password-error');
+
+                    if (password !== confirmPassword) {
+                        confirmPasswordError.textContent = "Passwords do not match";
+                        isValid = false;
+                    } else {
+                        confirmPasswordError.textContent = "";
+                    }
+                }
+
+                return isValid;
+            }
+
+            function loadCourses() {
+                fetch('http://localhost:3000/api/courses')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok: ' + response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const courseSelect = document.getElementById('course');
+                        courseSelect.innerHTML = ''; // Clear existing options
+                        if (data.length > 0) {
+                            data.forEach(course => {
+                                const option = document.createElement('option');
+                                option.value = course._id;
+                                option.textContent = course.name;
+                                courseSelect.appendChild(option);
+                            });
+                        } else {
+                            courseSelect.innerHTML = '<option value="">No courses available</option>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching courses:', error);
+                        document.getElementById('course-error').textContent = 'Error loading courses. Please try again later.';
+                    });
+            }
+
+            loadCourses();
+
+            nextBtn.addEventListener("click", () => {
+                if (validateStep(currentStep)) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            });
+
+            prevBtn.addEventListener("click", () => {
+                currentStep--;
+                showStep(currentStep);
+            });
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch('http://localhost:3000/auth/signup', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        alert("Signup successful!");
+                        window.location.href = "login.html";
+                    } else {
+                        alert("Signup failed: " + result.message);
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                    alert("An error occurred during signup.");
+                }
+            });
+
+            showStep(currentStep);
+        });
+    </script>
+</body>
+</html>

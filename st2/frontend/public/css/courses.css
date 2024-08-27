@@ -1,0 +1,256 @@
+/*frontend>public>css>styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+    animation: backgroundAnimation 10s infinite alternate;
+    max-width: 100%;
+    overflow-x: hidden;
+
+ 
+}
+
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% { background-color: #f9f9f9; }
+    50% { background-color: #e0f7fa; }
+    100% { background-color: #f1f8e9; }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.company-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name div {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.company-name div:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.3s ease;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-link {
+    margin: 0 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #333;
+}
+
+.auth-button {
+    background: #ff8c00;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Table Styles for Courses */
+.page-content {
+    padding: 20px;
+    text-align: center;
+}
+
+#course-list {
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 5px; 
+    background-color: #eef1f2; /* Uniform background color for all rows */
+    padding: 0;
+    list-style-type: none;
+    border-spacing: 0; /* Ensure no spacing between borders */
+    display: table; /* Ensure that the list behaves like a table */
+    border-collapse: collapse; /* Ensure borders collapse into a single border */
+}
+
+#course-list li {
+    display: table-row; /* Display as a table row */
+    border-bottom: 1px solid #ddd; /* Add border between rows */
+}
+
+#course-list li:last-child {
+    border-bottom: none; /* Remove the bottom border from the last row */
+}
+
+#course-list li h2,
+#course-list li p {
+    display: table-cell; /* Display as table cells */
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle; /* Align vertically in the middle */
+    border: 1px solid #ddd; /* Add border around each cell */
+}
+
+#course-list li h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#course-list li p {
+    color: #666;
+    font-size: 1em;
+}
+
+/* Button Style */
+.button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #1d55ff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #1190de;
+}
+/* Footer Styles */
+.footer_container {
+    background: rgb(237, 232, 232);
+    margin-top: 20px;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1); /* Added shadow for better footer appearance */
+}
+
+.linkedin-img {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.fab.fa-linkedin {
+    font-size: 30px;
+    color: #0077B5;
+    text-decoration: none;
+}
+
+.fab.fa-linkedin:hover {
+    color: #005983;
+}
+
+.col-md-6-text-right {
+    text-align: right;
+    margin-left: auto;
+    padding-right: 20px;
+}

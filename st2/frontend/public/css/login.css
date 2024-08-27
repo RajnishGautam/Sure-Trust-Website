@@ -1,0 +1,378 @@
+ /*frontend>public>css>login.css */
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  color: #333;
+  animation: backgroundAnimation 10s infinite alternate;
+  max-width: 100%;
+  overflow-x: hidden;
+
+
+}
+
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+  0% { background-color: #f9f9f9; }
+  50% { background-color: #e0f7fa; }
+  100% { background-color: #f1f8e9; }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.company-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-name div {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.company-name div:first-child {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header nav {
+  flex-grow: 1;
+  text-align: right;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.3s ease;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-link {
+  margin: 0 10px;
+}
+
+.social-icon {
+  font-size: 24px;
+  color: #333;
+}
+
+.auth-button {
+  background: #ff8c00;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  padding: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  right: 0;
+  min-width: 200px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  .container1{
+    width: 400px;
+    height: 450px;
+    margin-left: 550px;
+    margin-top: 50px;
+    border: 2px solid #ffffff;
+    padding: 0px;
+    border-radius: 15px ;
+    background: white;
+    
+    
+
+    
+  }
+  .container1 h3{
+    margin-left: 150px;
+  }
+  #login-form {
+    margin-top: 20px;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+  
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    
+  }
+  
+  button[type="submit"] {
+    background-color: #ff9509;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 110px;
+  }
+  button:hover{
+    background: #ffb347;
+  }
+  .signup-container p{
+    margin-left: 100px;
+    font-size: 20px;
+  }
+  .signup-btn{
+    background-color: #ff9509;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left:155px ;
+  }
+body{
+    width: 100%;
+    height: 100%;
+   margin: 0;
+   background: lightblue;
+}
+.input-group {
+  position: relative;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.input-prefix i {
+  margin-right: 10px;
+}
+
+.input-group input {
+  padding-left: 30px;
+}
+/* Header Styles */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.company-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name div {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.company-name div:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.3s ease;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-link {
+    margin: 0 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #333;
+}
+
+.auth-button {
+    background: #ff8c00;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

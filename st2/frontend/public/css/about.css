@@ -1,0 +1,398 @@
+/*frontend>public>css>styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+    animation: backgroundAnimation 10s infinite alternate;
+    max-width: 100%;
+    overflow-x: hidden;
+
+ 
+}
+
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% { background-color: #f9f9f9; }
+    50% { background-color: #e0f7fa; }
+    100% { background-color: #f1f8e9; }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+/* Header Styles */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.company-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name div {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.company-name div:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.3s ease;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-link {
+    margin: 0 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #333;
+}
+
+.auth-button {
+    background: #ff8c00;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Rotating Lines Section */
+.rotating-lines {
+    background: #f1f1f1;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotating-lines p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+ /* Footer style*/
+
+ 
+ .footer_container{
+    background: rgb(237, 232, 232);
+    margin-top: 20px;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+   
+  }
+  .linkedin-img{
+    margin-top: 10px;
+    margin-right: 20px;
+
+  }
+ 
+  
+  
+  .fab.fa-linkedin {
+    font-size: 30px;
+    color: #0077B5;
+    text-decoration: none;
+  }
+  
+  /* .col-md-6-text-right{
+    margin-left: 600px;
+    display: flex;
+  } */
+ .page-header .container h1{
+    font-size: 40px;
+    color: red;
+    margin-left: 50px;
+ }
+ .page-content .container h1{
+    font-size: 30px;
+    color: rgb(13, 13, 13);
+    margin-left: 500px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+.page-content .containerimage .founder-image{
+    width: 500px;
+    height:400px;
+    margin-left: 900px;
+}
+ 
+/* Company Info Section Styles */
+.company-info {
+    padding: 60px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    background: transparent;
+}
+
+.company-info .about-content {
+    flex: 1;
+    max-width: 600px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.company-info .image-content {
+    flex: 1;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.company-info .image-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.company-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: blue;
+}
+
+.company-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #330f88;
+}
+
+.company-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.trustee-cards, .advisor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .trustee-card, .advisor-card {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+  }
+  
+  .trustee-card img, .advisor-card img {
+    width: calc(100% );
+    border-radius: 0;
+  } 
+  .trustee-card h3, .advisor-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .trustee-card p, .advisor-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .board-of-advisors h2{
+    margin-left: 650px;
+  }
+
+  .board-of-trustees h2{
+    margin-left: 650px;
+  }
+
+  .advisor-card:hover {
+    transform: translateY(-5px); /* Slightly lift the card on hover */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Add more prominent shadow */
+  }
+  
+  .trustee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); 
+  }
+  .board-of-trustees {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+/* Founder Info Section Styles */
+.founder-info {
+    padding: 60px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    background: transparent;
+}
+
+.founder-info .about-content {
+    flex: 1;
+    max-width: 600px;
+    margin: 10px;
+    box-sizing: border-box;
+    order: 2; /* This moves the about-content to the second position */
+}
+
+.founder-info .image-content {
+    flex: 1;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    order: 1; /* This moves the image-content to the first position */
+}
+
+.founder-info .image-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.founder-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: blue;
+}
+
+.founder-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #330f88;
+}
+
+.founder-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.about-para h1{
+    font-size: 40px;
+    color: #330f88;
+    margin-left: 100px;
+}
+.about-para p{
+    font-size: 24px;
+    max-width: 1300px;
+    margin-left: 100px;
+    text-align: justify;
+}
+.col-md-6-text-right{
+    text-align: right;
+    margin-left: -200px;
+ }
